@@ -47,10 +47,12 @@ export const Colors = {
     tabIconSelected: tintColorDark, // White for active tab icons (matches general icons)
 
     // Specific UI element backgrounds
-    navbarBG: "#221E45", // Same as main background for the bottom navigation bar
+    navbarBG: "#3D348B", // Same as main background for the bottom navigation bar
 
     // Accent colors (for specific elements like electricity/water icons)
     accentBlue: "#007BFF", // Bright blue (for water icon)
     accentYellow: "#F8C000", // Mustard yellow (for electricity icon)
+    buttonBackground: "#9B95D1",
+    tagsColor: "#3D348B",
   },
 };

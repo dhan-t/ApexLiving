@@ -1,9 +1,9 @@
-import React from "react";
-import { Tabs } from "expo-router";
+import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
+import React from "react";
 import { useColorScheme } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context"; // Import useSafeAreaInsets
-import { Colors } from "@/constants/Colors";
 
 export default function TabsLayout() {
   const colorScheme = useColorScheme();
@@ -16,8 +16,7 @@ export default function TabsLayout() {
         headerShown: false, // Hides the header for all tab screens
         tabBarStyle: {
           backgroundColor: currentThemeColors.navbarBG,
-          height: 90 + insets.bottom,
-          paddingBottom: 20 + insets.bottom,
+          height: 80 + insets.bottom,
           paddingTop: 10,
         },
         tabBarActiveTintColor: currentThemeColors.tabIconSelected,

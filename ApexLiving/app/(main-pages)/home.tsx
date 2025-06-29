@@ -1,10 +1,33 @@
-import { View, Text } from "react-native";
+import MessageButton from "@/components/MessageButton";
+import ScreenContainer from "@/components/ScreenContainer";
+import { Colors } from "@/constants/Colors";
 import React from "react";
+import { StyleSheet, Text, useColorScheme, View } from "react-native";
 
-export default function home() {
+export default function Home() {
+  const colorScheme = useColorScheme();
+  const currentThemeColors = Colors[colorScheme ?? "dark"];
+
   return (
-    <View>
-      <Text>home</Text>
-    </View>
+    <ScreenContainer>
+      <View style={[styles.pageName]}>
+        <Text style={[styles.pageTitle]}>Apex Residences</Text>
+        <MessageButton size={30} color={currentThemeColors.icon} />
+      </View>
+    </ScreenContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  pageName: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+  },
+  pageTitle: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "white",
+  },
+});

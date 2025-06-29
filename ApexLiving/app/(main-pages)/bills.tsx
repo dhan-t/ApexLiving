@@ -1,29 +1,33 @@
-import { View, Text, StyleSheet } from "react-native";
-import React from "react";
-import { Ionicons } from "@expo/vector-icons";
-import { useColorScheme } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context"; // Import useSafeAreaInsets
+import MessageButton from "@/components/MessageButton";
+import ScreenContainer from "@/components/ScreenContainer";
 import { Colors } from "@/constants/Colors";
+import React from "react";
+import { StyleSheet, Text, useColorScheme, View } from "react-native";
 
-export default function billings() {
+export default function Bills() {
   const colorScheme = useColorScheme();
   const currentThemeColors = Colors[colorScheme ?? "dark"];
-  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.container}>
-      <Ionicons name="heart" size={32} color="red" />
-    </View>
+    <ScreenContainer>
+      <View style={[styles.pageName]}>
+        <Text style={[styles.pageTitle]}>Bills</Text>
+        <MessageButton size={30} color={currentThemeColors.icon} />
+      </View>
+    </ScreenContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
+  pageName: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
+    width: "100%",
   },
-  text: {
-    fontSize: 18,
-    marginVertical: 10,
+  pageTitle: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "white",
   },
 });
