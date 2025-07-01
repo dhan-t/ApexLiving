@@ -1,6 +1,7 @@
 // data/dummyData.ts
 
 import { ProductCardData } from "@/components/ProductCard"; // Assuming your interface is exported
+import { OccupancyUnit, PaymentMethod, UserProfile } from "@/types/index";
 
 export const DUMMY_PRODUCTS: ProductCardData[] = [
   {
@@ -157,3 +158,24 @@ export const DUMMY_BILLS_SUMMARY = [
     icon: "🏢",
   },
 ];
+
+export const DUMMY_PAYMENT_METHODS: PaymentMethod[] = [
+  { id: "pm1", bankName: "PNB", lastFourDigits: "0000", type: "Credit Card" },
+  { id: "pm2", bankName: "BPI", lastFourDigits: "0000", type: "Debit Card" },
+  { id: "pm3", bankName: "GCash", lastFourDigits: "0000", type: "E-Wallet" },
+];
+
+export const DUMMY_OCCUPANCY_UNITS: OccupancyUnit[] = [
+  { id: "ou1", role: "Owner", unitNumber: "1001", tower: "Tower A" }, // Matches the image
+  { id: "ou2", role: "Owner", unitNumber: "1001", tower: "Tower A" }, // Matches the image
+];
+
+export const DUMMY_USER_PROFILE: UserProfile = {
+  id: "user-dhan-tamparong-123",
+  fullName: "Dhan Tamparong",
+  role: "Tenant", // Initial role, matches the Figma
+  email: "dhan.tamparong@gmail.com",
+  phoneNumber: "+639998887777",
+  // Password is not stored/sent in real apps, but for dummy UI representation:
+  // password: 'secure_password_hash',
+};

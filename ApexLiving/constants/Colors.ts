@@ -27,6 +27,10 @@ export const Colors = {
     // Accent colors (can be used for specific icons like electricity/water if they are static)
     accentBlue: "#007BFF", // Bright blue for water icon or other blue accents
     accentYellow: "#F8C000", // Mustard yellow for electricity icon or other yellow accents
+
+    toggleHead: "#F7B801",
+    toggleBodyIn: "#C7C4E0",
+    toggleBodyAc: "#F35B04",
   },
   dark: {
     // --- Dark Theme Colors (extracted from HOME SCREEN.png) ---
@@ -54,5 +58,9 @@ export const Colors = {
     accentYellow: "#F8C000", // Mustard yellow (for electricity icon)
     buttonBackground: "#9B95D1",
     tagsColor: "#3D348B",
+
+    toggleHead: "#F7B801",
+    toggleBodyIn: "#C7C4E0",
+    toggleBodyAc: "#F35B04",
   },
 };
