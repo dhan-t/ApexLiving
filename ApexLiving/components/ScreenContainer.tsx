@@ -6,11 +6,13 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 interface ScreenContainerProps {
   children: ReactNode;
   style?: ViewStyle;
+  noPaddingTop?: boolean; // Add this prop
 }
 
 export default function ScreenContainer({
   children,
   style,
+  noPaddingTop,
 }: ScreenContainerProps) {
   const colorScheme = useColorScheme();
   const currentThemeColors = Colors[colorScheme ?? "dark"];
@@ -22,7 +24,7 @@ export default function ScreenContainer({
         styles.container,
         {
           backgroundColor: currentThemeColors.background,
-          paddingTop: 20 + insets.top,
+          paddingTop: noPaddingTop ? 0 : 20 + insets.top,
         },
         style,
       ]}

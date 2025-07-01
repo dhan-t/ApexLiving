@@ -150,17 +150,11 @@ export default function ProfileDetailsScreen() {
   }
 
   return (
-    <ScreenContainer>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {/* Profile Header Section - Now uses ProfileDropdownSection as per Figma*/}
-        <Text
-          style={[
-            styles.sectionHeader,
-            { color: currentThemeColors.text, marginTop: 0 },
-          ]}
-        >
-          Profile
-        </Text>
+    <ScreenContainer noPaddingTop>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ paddingTop: 15 }}
+      >
         <ProfileDropdownSection
           userProfile={userProfile}
           onRoleChange={handleRoleChange}

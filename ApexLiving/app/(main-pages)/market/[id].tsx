@@ -121,8 +121,11 @@ export default function ProductDetailsScreen() {
   const formattedPrice = `₱${product.price.toLocaleString("en-PH")}`;
 
   return (
-    <ScreenContainer>
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <ScreenContainer noPaddingTop>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ paddingTop: 15 }}
+      >
         {/* Main Product Image */}
         <Image
           source={{ uri: product.imageUrl }}

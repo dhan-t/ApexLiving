@@ -29,7 +29,7 @@ export default function SettingsStackLayout() {
         }}
       />
       <Stack.Screen
-        name="profile" // Corresponds to settings/profile.tsx
+        name="profile" // Corresponds to settings/prorfile.tsx
         options={{
           title: "Profile", // Title for the Profile Details screen
         }}
