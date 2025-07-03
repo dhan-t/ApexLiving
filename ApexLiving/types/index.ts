@@ -26,13 +26,53 @@ export interface OccupancyUnit {
 
 export type BillStatus = "Paid" | "Unpaid" | "On-going";
 
+export interface BillBreakdownItem {
+  label: string;
+  value: string; // Can be string for numbers with currency, or actual number
+}
+
+export interface ElectricityBillDetails {
+  accountNumber: string;
+  currentKWH: number;
+  previousKWH: number;
+  nextReadingDate: string; // e.g., "10 March 2025"
+  balanceFromPreviousBilling: number;
+  currentCharges: number;
+  totalAmountDue: number;
+}
+
+export interface WaterBillDetails {
+  accountNumber: string;
+  currentCUM: number; // Current Cubic Meter
+  previousCUM: number; // Previous Cubic Meter
+  nextReadingDate: string;
+  balanceFromPreviousBilling: number;
+  currentCharges: number;
+  totalAmountDue: number;
+}
+
+export interface AssociationDuesDetails {
+  accountNumber: string;
+  dueDate: string;
+  nextReadingDate: string;
+  regularDuesMonthlyDues: number;
+  specialAssessments: number;
+  lateFeesPenalties: number;
+  totalAmountDue: number;
+}
+
+// Extend BillCycle to include detailed breakdown
 export interface BillCycle {
   id: string;
   monthRange: string;
-  electricity: number;
-  water: number;
-  associationDues: number;
+  electricity: number; // Summary amount
+  water: number; // Summary amount
+  associationDues: number; // Summary amount
   status: BillStatus;
-  dueDate: string; // e.g., "February 10, 2025"
-  paidDate: string | null; // e.g., "February 10, 2025"
+  dueDate: string;
+  paidDate: string | null;
+  // NEW: Detailed breakdown
+  electricityDetails?: ElectricityBillDetails;
+  waterDetails?: WaterBillDetails;
+  associationDuesDetails?: AssociationDuesDetails;
 }

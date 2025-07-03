@@ -1,15 +1,23 @@
 // components/bills/BillCard.tsx
-import { Colors } from "@/constants/Colors"; // Adjust path as needed
-import { BillCycle, BillStatus } from "@/types"; // Import your BillCycle and BillStatus types
+import { Colors } from "@/constants/Colors";
+import { BillCycle, BillStatus } from "@/types";
 import { Ionicons } from "@expo/vector-icons";
+import { Href, useRouter } from "expo-router"; // Import useRouter and Href
 import React from "react";
-import { StyleSheet, Text, View, useColorScheme } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  useColorScheme,
+} from "react-native"; // Import TouchableOpacity
 
 interface BillCardProps {
   bill: BillCycle;
 }
 
 const BillCard: React.FC<BillCardProps> = ({ bill }) => {
+  const router = useRouter(); // Initialize router
   const colorScheme = useColorScheme();
   const currentThemeColors = Colors[colorScheme ?? "dark"];
 
@@ -41,12 +49,22 @@ const BillCard: React.FC<BillCardProps> = ({ bill }) => {
   const { backgroundColor: statusBgColor, textColor: statusTextColor } =
     getStatusStyle(bill.status);
 
+  const handleCardPress = () => {
+    // Navigate to the bill details page, passing the bill ID
+    router.push({
+      pathname: `/bills/${bill.id}` as Href<string>, // Correct path for dynamic route
+      params: { billId: bill.id }, // You can pass params if needed, though ID is in pathname
+    });
+  };
+
   return (
-    <View
+    <TouchableOpacity
       style={[
         styles.cardContainer,
         { backgroundColor: currentThemeColors.cardBackground },
       ]}
+      onPress={handleCardPress}
+      activeOpacity={0.7}
     >
       <Text style={[styles.monthRange, { color: currentThemeColors.text }]}>
         {bill.monthRange}
@@ -115,7 +133,7 @@ const BillCard: React.FC<BillCardProps> = ({ bill }) => {
             </Text>
           )}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -124,7 +142,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 15,
     marginBottom: 15,
-    width: "100%",
   },
   monthRange: {
     fontSize: 18,
@@ -141,7 +158,7 @@ const styles = StyleSheet.create({
   },
   billIcon: {
     marginRight: 8,
-    width: 24, // Fixed width for alignment
+    width: 24,
   },
   billText: {
     fontSize: 16,
