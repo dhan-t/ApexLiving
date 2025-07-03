@@ -1,7 +1,12 @@
 // data/dummyData.ts
 
 import { ProductCardData } from "@/components/ProductCard"; // Assuming your interface is exported
-import { OccupancyUnit, PaymentMethod, UserProfile } from "@/types/index";
+import {
+  BillCycle,
+  OccupancyUnit,
+  PaymentMethod,
+  UserProfile,
+} from "@/types/index";
 
 export const DUMMY_PRODUCTS: ProductCardData[] = [
   {
@@ -179,3 +184,66 @@ export const DUMMY_USER_PROFILE: UserProfile = {
   // Password is not stored/sent in real apps, but for dummy UI representation:
   // password: 'secure_password_hash',
 };
+
+export const DUMMY_BILL_CYCLES: BillCycle[] = [
+  {
+    id: "bill-1",
+    monthRange: "January - February",
+    electricity: 1500,
+    water: 500,
+    associationDues: 1000,
+    status: "Paid",
+    dueDate: "February 10, 2025",
+    paidDate: "February 10, 2025",
+  },
+  {
+    id: "bill-2",
+    monthRange: "February - March",
+    electricity: 1500,
+    water: 500,
+    associationDues: 1000,
+    status: "Unpaid",
+    dueDate: "March 15, 2025",
+    paidDate: null,
+  },
+  {
+    id: "bill-3",
+    monthRange: "March - April",
+    electricity: 1500,
+    water: 500,
+    associationDues: 1000,
+    status: "On-going",
+    dueDate: "April 15, 2025", // Or some future date
+    paidDate: null,
+  },
+  {
+    id: "bill-4",
+    monthRange: "April - May",
+    electricity: 1600,
+    water: 550,
+    associationDues: 1000,
+    status: "Paid",
+    dueDate: "May 10, 2025",
+    paidDate: "May 9, 2025",
+  },
+  {
+    id: "bill-5",
+    monthRange: "May - June",
+    electricity: 1700,
+    water: 600,
+    associationDues: 1000,
+    status: "Unpaid",
+    dueDate: "June 20, 2025",
+    paidDate: null,
+  },
+  {
+    id: "bill-6",
+    monthRange: "June - July",
+    electricity: 1800,
+    water: 650,
+    associationDues: 1000,
+    status: "On-going",
+    dueDate: "July 25, 2025",
+    paidDate: null,
+  },
+];

@@ -68,21 +68,17 @@ const ProfileDropdownSection: React.FC<ProfileDropdownSectionProps> = ({
       accessibilityLabel="Change profile role"
     >
       <View>
-        <Text
-          style={[styles.nameText, { color: currentThemeColors.background }]}
-        >
+        <Text style={[styles.nameText, { color: currentThemeColors.text }]}>
           {userProfile.fullName}
         </Text>
-        <Text
-          style={[styles.typeText, { color: currentThemeColors.background }]}
-        >
+        <Text style={[styles.typeText, { color: currentThemeColors.text }]}>
           {currentRole}
         </Text>
       </View>
       <Ionicons
         name="chevron-down-outline" // Down arrow for dropdown [cite: image_1cf6d7.png]
         size={24}
-        color={currentThemeColors.background}
+        color={currentThemeColors.icon}
       />
     </TouchableOpacity>
   );

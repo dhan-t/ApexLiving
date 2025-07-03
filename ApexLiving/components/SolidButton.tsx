@@ -39,12 +39,11 @@ const SolidButton: React.FC<SolidButtonProps> = ({
   const colorScheme = useColorScheme();
   const currentThemeColors = Colors[colorScheme ?? "dark"];
 
-  const defaultIconColor = iconColor || currentThemeColors.tabIconSelected; // White/tint color for icons
-  const defaultTextColor =
-    textStyle?.color || currentThemeColors.tabIconSelected; // White/tint for text
+  const defaultIconColor = iconColor || currentThemeColors.background; // White/tint color for icons
+  const defaultTextColor = textStyle?.color || currentThemeColors.background; // White/tint for text
   const defaultBackgroundColor =
     style?.backgroundColor ||
-    currentThemeColors.background ||
+    currentThemeColors.text ||
     currentThemeColors.tint; // A default button background
 
   return (
@@ -88,14 +87,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    paddingVertical: 15,
-    borderRadius: 8,
+    paddingVertical: 8,
+    borderRadius: 15,
   },
   icon: {
     marginRight: 10,
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: 13,
     fontWeight: "bold",
   },
   disabledButton: {

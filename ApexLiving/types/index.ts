@@ -23,3 +23,16 @@ export interface OccupancyUnit {
   unitNumber: string;
   tower: string;
 }
+
+export type BillStatus = "Paid" | "Unpaid" | "On-going";
+
+export interface BillCycle {
+  id: string;
+  monthRange: string;
+  electricity: number;
+  water: number;
+  associationDues: number;
+  status: BillStatus;
+  dueDate: string; // e.g., "February 10, 2025"
+  paidDate: string | null; // e.g., "February 10, 2025"
+}

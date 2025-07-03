@@ -56,12 +56,12 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
     >
       <View>
         <Text
-          style={[styles.nameText, { color: currentThemeColors.background }]} // Changed to currentThemeColors.text
+          style={[styles.nameText, { color: currentThemeColors.text }]} // Changed to currentThemeColors.text
         >
           {userProfile.fullName}
         </Text>
         <Text
-          style={[styles.typeText, { color: currentThemeColors.background }]} // Changed to currentThemeColors.secondaryText
+          style={[styles.typeText, { color: currentThemeColors.text }]} // Changed to currentThemeColors.secondaryText
         >
           {userProfile.role}
         </Text>
@@ -69,7 +69,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
       <Ionicons
         name="chevron-forward-outline" // Changed icon as per image
         size={24}
-        color={currentThemeColors.background} // Changed to currentThemeColors.icon
+        color={currentThemeColors.icon} // Changed to currentThemeColors.icon
       />
     </TouchableOpacity>
   );

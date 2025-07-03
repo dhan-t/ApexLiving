@@ -34,8 +34,8 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
   const colorScheme = useColorScheme();
   const currentThemeColors = Colors[colorScheme ?? "dark"];
 
-  const defaultIconColor = iconColor || currentThemeColors.background;
-  const defaultTextColor = textStyle?.color || currentThemeColors.background;
+  const defaultIconColor = iconColor || currentThemeColors.text;
+  const defaultTextColor = textStyle?.color || currentThemeColors.icon;
   const defaultBackgroundColor =
     style?.backgroundColor || currentThemeColors.cardBackground;
 
